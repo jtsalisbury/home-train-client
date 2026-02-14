@@ -126,12 +126,12 @@ const fillCircle = (cx, cy, r) => {
 
     matrix
         .fgColor(0xFFFFFF) // amber
-        .drawText(train.train_destination, x + 18, y);  
+        .drawText(train.train_destination, x + 18, y + 1);  
     
     // Arrival time
     matrix
         .fgColor(0xCC8C00) // amber
-        .drawText(str.substring(0, str.length - 1), x + 18, y + 9);  
+        .drawText(str.substring(0, str.length - 1), x + 18, y + 8);  
   };
 
 const start = () => {
