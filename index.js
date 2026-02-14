@@ -78,7 +78,7 @@ const renderTrain = (train, x, y) => {
 
             .fgColor(0xFFFFFF)
             .bgColor(0x000000)
-            .drawText(train.train_type, x + 4, y + 4);
+            .drawText(train.train_type, x + 4, y + 3);
 }
 
 const renderArrivalTimes = (trains) => {
