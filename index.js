@@ -116,7 +116,7 @@ const fillCircle = (cx, cy, r) => {
     for (let i = 0; i < 4 && i < train.which_is_in.length; i++) {
         let time = train.which_is_in[i]
 
-        str += time + ", ";
+        str += time + ",";
     }
     
     // Arrival time
