@@ -113,7 +113,7 @@ const fillCircle = (cx, cy, r) => {
       .drawText(train.train_type, cx - 2, cy - 3);
       
     let str = "";
-    for (let i = 0; i < 4 && i < train.which_is_in.length; i++) {
+    for (let i = 0; i < 3 && i < train.which_is_in.length; i++) {
         let time = train.which_is_in[i]
 
         str += time + ",";
@@ -122,7 +122,7 @@ const fillCircle = (cx, cy, r) => {
     // Arrival time
     matrix
         .fgColor(0xCC8C00) // amber
-        .drawText(str, x + 18, y + 4);  
+        .drawText(str.substring(0, str.length - 1), x + 18, y + 4);  
   };
 
 const renderArrivalTimes = (trains) => {
