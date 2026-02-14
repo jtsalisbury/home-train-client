@@ -54,10 +54,10 @@ const renderTrainData = (data) => {
 
 const getColor = (train) => {
     if (train.train_type == "J" || train.train_type == "Z") {
-        return 0xA52A2A
+        return 0x996633;
 
     } else if (train.train_type == "M") {
-        return 0xFF6320;
+        return 0xEB6800;
     }
 }
 
