@@ -72,27 +72,26 @@ const showNoTrains = () => {
 
 const fillCircle = (cx, cy, r) => {
     for (let dy = -r; dy <= r; dy++) {
-      const dx = Math.floor(Math.sqrt(r * r - dy * dy));
+      const dx = Math.round(Math.sqrt(r * r - dy * dy));
       matrix.drawLine(cx - dx, cy + dy, cx + dx, cy + dy);
     }
   };
 
-const renderTrain = (train, x, y) => {
+  const renderTrain = (train, x, y) => {
     const cx = x + 7;
     const cy = y + 7;
-    const r = 6;
-
+    const r = 7;
+  
     matrix
-        .fgColor(getColor(train))
-        .bgColor(0x000000);
-        
-        fillCircle(cx, cy, r);
-        
+      .fgColor(getColor(train));
+  
+    fillCircle(cx, cy, r);
+  
     matrix
-        .fgColor(0xFFFFFF)
-        .bgColor(0x000000)
-        .drawText(train.train_type, cx - 3, cy - 4);
-}
+      .fgColor(0xE0E0E0)
+      .bgColor(0x000000)
+      .drawText(train.train_type, cx - 3, cy - 4);
+  };
 
 const renderArrivalTimes = (trains) => {
     matrix.clear().brightness(40).font(font);
