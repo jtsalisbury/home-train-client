@@ -17,7 +17,7 @@ const initLedMatrix = () => {
 
     const runtimeOptions = {
         ...LedMatrix.defaultRuntimeOptions(),
-        gpioSlowdown: 2, // Required for slower Pis
+        gpioSlowdown: 0, // Required for slower Pis
     };
 
     matrix = new LedMatrix(matrixOptions, runtimeOptions);
