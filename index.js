@@ -43,14 +43,18 @@ const renderTrainData = (data) => {
         showNoTrains();
 
     } else {
-        const jTimes = data.trains.filter(train => train.train_type == "J" || train.train_type == "Z").map(train => train.which_is_in);
-        const mTimes = data.trains.filter(train => train.train_type == "M").map(train => train.which_is_in);
+        const jTrains = data.trains.filter(train => train.train_type == "J" || train.train_type == "Z");
+        const mTrains = data.trains.filter(train => train.train_type == "M");
+
+        const jTimes = jTrains.map(train => train.which_is_in);
+        const mTimes = mTrains.map(train => train.which_is_in);
 
         matrix.clear().brightness(35).font(font);
         
         if (jTimes && jTimes.length > 0) {
             renderTrain({
                 train_type: "J",
+                train_destination: jTrains[0].train_destination,
                 which_is_in: jTimes
             }, 2, 1);
         }
@@ -58,6 +62,7 @@ const renderTrainData = (data) => {
         if (mTimes && mTimes.length > 0) {
             renderTrain({
                 train_type: "M",
+                train_destination: mTrains[0].train_destination,
                 which_is_in: mTimes
 
             }, 2, 17);
@@ -118,26 +123,16 @@ const fillCircle = (cx, cy, r) => {
 
         str += time + ",";
     }
+
+    matrix
+        .fgColor(0xFFFFFF) // amber
+        .drawText(train.train_destination, x + 18, y);  
     
     // Arrival time
     matrix
         .fgColor(0xCC8C00) // amber
-        .drawText(str.substring(0, str.length - 1), x + 18, y + 8);  
+        .drawText(str.substring(0, str.length - 1), x + 18, y + 9);  
   };
-
-const renderArrivalTimes = (trains) => {
-
-    if (trains[0]) {
-        
-    }
-
-    if (trains[1]) {
-        
-    }
-   
-       
-}
-
 
 const start = () => {
     initLedMatrix();
