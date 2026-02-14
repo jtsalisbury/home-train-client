@@ -54,7 +54,7 @@ const renderTrainData = (data) => {
 
 const getColor = (train) => {
     if (train.train_type == "J" || train.train_type == "Z") {
-        return 0x8E5C33;
+        return {r: 165, g: 42, b: 42};
 
     } else if (train.train_type == "M") {
         return 0xEB6800;
@@ -62,7 +62,12 @@ const getColor = (train) => {
 }
 
 const showNoTrains = () => {
+    matrix.clear().brightness(100).font(font);
+    matrix
+        .fgColor(getColor(trains[0]))
+        .drawText("No trains arriving", 0, 1);
 
+    matrix.sync();
 }
 
 const renderArrivalTimes = (trains) => {
