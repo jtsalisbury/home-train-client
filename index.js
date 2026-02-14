@@ -81,7 +81,7 @@ const renderArrivalTimes = (trains) => {
 
             .fgColor(0xFFFFFF)
             .bgColor(0x000000)
-            .drawText(trains[0].train_type, 10, 10);
+            .drawText(trains[0].train_type, 3, 4);
     }
    
     matrix.sync();
