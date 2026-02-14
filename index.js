@@ -71,7 +71,7 @@ const showNoTrains = () => {
 }
 
 const fillCircle = (cx, cy, r) => {
-    const yScale = 1.1; // try 1.05–1.15
+    const yScale = 1.05; // try 1.05–1.15
   
     for (let dy = -r; dy <= r; dy++) {
       const adjustedDy = dy / yScale;
