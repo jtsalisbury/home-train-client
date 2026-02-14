@@ -89,7 +89,7 @@ const renderArrivalTimes = (trains) => {
     }
 
     if (trains[1]) {
-        renderTrain(trains[1], 16, 16)
+        renderTrain(trains[1], 2, 17)
     }
    
     matrix.sync();
