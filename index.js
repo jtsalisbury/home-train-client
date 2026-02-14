@@ -10,7 +10,7 @@ const initLedMatrix = () => {
         ...LedMatrix.defaultMatrixOptions(),
         rows: 32,
         cols: 64,
-        chainLength: 2,
+        chainLength: 1,
         parallel: 1,
         hardwareMapping: 'regular', // or 'regular'
     };
