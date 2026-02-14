@@ -95,7 +95,7 @@ const renderTrain = (train, x, y) => {
 }
 
 const renderArrivalTimes = (trains) => {
-    matrix.clear().brightness(100).font(font);
+    matrix.clear().brightness(40).font(font);
 
     if (trains[0]) {
         renderTrain(trains[0], 2, 1);
