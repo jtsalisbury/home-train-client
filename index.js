@@ -89,16 +89,17 @@ const fillCircle = (cx, cy, r) => {
       .fgColor(getColor(train));
   
     fillCircle(cx, cy, r);
-
-    // black shadow
-    matrix
-        .fgColor(0x000000)
-        .drawText(train.train_type, cx - 1, cy - 2);
   
     matrix
       .fgColor(0xFFFFFF)
       .bgColor(0x000000)
       .drawText(train.train_type, cx - 2, cy - 3);
+      
+
+    // Arrival time
+    matrix
+        .fgColor(0xCC8C00) // amber
+        .drawText(train.which_is_in, x + 18, y + 4);  
   };
 
 const renderArrivalTimes = (trains) => {
