@@ -1,0 +1,23 @@
+{
+  "name": "home-train-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtsalisbury/home-train-client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtsalisbury/home-train-client/issues"
+  },
+  "homepage": "https://github.com/jtsalisbury/home-train-client#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "rpi-led-matrix": "^1.15.0"
+  }
+}
