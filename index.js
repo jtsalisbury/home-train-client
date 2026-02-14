@@ -89,6 +89,11 @@ const fillCircle = (cx, cy, r) => {
       .fgColor(getColor(train));
   
     fillCircle(cx, cy, r);
+
+    // black shadow
+    matrix
+        .fgColor(0x000000)
+        .drawText(train.train_type, cx - 1, cy - 2);
   
     matrix
       .fgColor(0xFFFFFF)
