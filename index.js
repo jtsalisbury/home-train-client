@@ -77,7 +77,7 @@ const renderArrivalTimes = (trains) => {
         matrix
             .fgColor(getColor(trains[0]))
             .bgColor(getColor(trains[0]))
-            .drawCircle(5, 5, 8)
+            .drawCircle(7, 7, 6)
 
             .fgColor(0xFFFFFF)
             .bgColor(0x000000)
