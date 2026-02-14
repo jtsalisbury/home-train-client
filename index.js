@@ -74,18 +74,18 @@ const renderTrain = (train, x, y) => {
         matrix
             .fgColor(getColor(train))
             .bgColor(getColor(train))
-            .drawCircle(x + 6, y + 6, 6)
+            .drawCircle(x + 6, y + 6, 7)
 
             .fgColor(0xFFFFFF)
             .bgColor(0x000000)
-            .drawText(train.train_type, x + 4, y + 3);
+            .drawText(train.train_type, x + 5, y + 3);
 }
 
 const renderArrivalTimes = (trains) => {
     matrix.clear().brightness(100).font(font);
 
     if (trains[0]) {
-        renderTrain(trains[0], 2, 2);
+        renderTrain(trains[0], 2, 1);
     }
 
     if (trains[1]) {
