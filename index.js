@@ -91,7 +91,7 @@ const fillCircle = (cx, cy, r) => {
     fillCircle(cx, cy, r);
   
     matrix
-      .fgColor(0xE0E0E0)
+      .fgColor(0xFFFFFF)
       .bgColor(0x000000)
       .drawText(train.train_type, cx - 2, cy - 3);
   };
