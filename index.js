@@ -70,15 +70,28 @@ const showNoTrains = () => {
     matrix.sync();
 }
 
-const renderTrain = (train, x, y) => {
-        matrix
-            .fgColor(getColor(train))
-            .bgColor(getColor(train))
-            .drawCircle(x + 6, y + 6, 7)
+const fillCircle = (cx, cy, r) => {
+    for (let dy = -r; dy <= r; dy++) {
+      const dx = Math.floor(Math.sqrt(r * r - dy * dy));
+      matrix.drawLine(cx - dx, cy + dy, cx + dx, cy + dy);
+    }
+  };
 
-            .fgColor(0xFFFFFF)
-            .bgColor(0x000000)
-            .drawText(train.train_type, x + 5, y + 3);
+const renderTrain = (train, x, y) => {
+    const cx = x + 6;
+    const cy = y + 6;
+    const r = 7;
+
+    matrix
+        .fillCircle(getColor(train))
+        .bgColor(getColor(train));
+        
+        fillCircle(cx, cy, r);
+        
+    matrix
+        .fgColor(0xFFFFFF)
+        .bgColor(0x000000)
+        .drawText(train.train_type, x + 5, y + 3);
 }
 
 const renderArrivalTimes = (trains) => {
