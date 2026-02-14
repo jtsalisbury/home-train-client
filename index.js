@@ -62,7 +62,7 @@ const getColor = (train) => {
 }
 
 const showNoTrains = () => {
-    matrix.clear().brightness(100).font(font);
+    matrix.clear().brightness(40).font(font);
     matrix
         .fgColor(getColor(trains[0]))
         .drawText("No trains arriving", 0, 1);
@@ -78,20 +78,20 @@ const fillCircle = (cx, cy, r) => {
   };
 
 const renderTrain = (train, x, y) => {
-    const cx = x + 6;
-    const cy = y + 6;
+    const cx = x + 7;
+    const cy = y + 7;
     const r = 6;
 
     matrix
         .fgColor(getColor(train))
-        .bgColor(getColor(train));
+        .bgColor(0x000000);
         
         fillCircle(cx, cy, r);
         
     matrix
         .fgColor(0xFFFFFF)
         .bgColor(0x000000)
-        .drawText(train.train_type, x + 5, y + 3);
+        .drawText(train.train_type, cx - 3, cy - 4);
 }
 
 const renderArrivalTimes = (trains) => {
