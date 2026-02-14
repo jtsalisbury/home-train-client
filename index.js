@@ -21,7 +21,7 @@ const initLedMatrix = () => {
     };
 
     matrix = new LedMatrix(matrixOptions, runtimeOptions);
-    font = new Font("default", "./5x8.bdf");
+    font = new Font("default", "./5x7.bdf");
 }
 
 
@@ -77,7 +77,7 @@ const renderArrivalTimes = (trains) => {
         matrix
             .fgColor(getColor(trains[0]))
             .bgColor(getColor(trains[0]))
-            .drawCircle(8, 8, 7)
+            .drawCircle(8, 8, 6)
 
             .fgColor(0xFFFFFF)
             .bgColor(0x000000)
