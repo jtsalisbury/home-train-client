@@ -54,10 +54,10 @@ const renderTrainData = (data) => {
 
 const getColor = (train) => {
     if (train.train_type == "J" || train.train_type == "Z") {
-        return {r: 165, g: 42, b: 42};
+        return 0x7A5228;
 
     } else if (train.train_type == "M") {
-        return 0xEB6800;
+        return 0xCC4F14;
     }
 }
 
@@ -97,7 +97,7 @@ const fillCircle = (cx, cy, r) => {
   };
 
 const renderArrivalTimes = (trains) => {
-    matrix.clear().brightness(40).font(font);
+    matrix.clear().brightness(180).font(font);
 
     if (trains[0]) {
         renderTrain(trains[0], 2, 1);
