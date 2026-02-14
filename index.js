@@ -80,7 +80,7 @@ const fillCircle = (cx, cy, r) => {
 const renderTrain = (train, x, y) => {
     const cx = x + 6;
     const cy = y + 6;
-    const r = 7;
+    const r = 6;
 
     matrix
         .fgColor(getColor(train))
