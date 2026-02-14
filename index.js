@@ -21,7 +21,7 @@ const initLedMatrix = () => {
     };
 
     matrix = new LedMatrix(matrixOptions, runtimeOptions);
-    font = new Font("default", "./5x7.bdf");
+    font = new Font("default", "/home/pi/Desktop/home-train-client/5x7.bdf");
 }
 
 
