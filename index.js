@@ -62,7 +62,7 @@ const getColor = (train) => {
 }
 
 const showNoTrains = () => {
-    matrix.clear().brightness(40).font(font);
+    matrix.clear().brightness(35).font(font);
     matrix
         .fgColor(getColor(trains[0]))
         .drawText("No trains arriving", 0, 1);
