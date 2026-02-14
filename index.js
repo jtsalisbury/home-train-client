@@ -71,8 +71,11 @@ const showNoTrains = () => {
 }
 
 const fillCircle = (cx, cy, r) => {
+    const yScale = 1.1; // try 1.05–1.15
+  
     for (let dy = -r; dy <= r; dy++) {
-      const dx = Math.round(Math.sqrt(r * r - dy * dy));
+      const adjustedDy = dy / yScale;
+      const dx = Math.round(Math.sqrt(r * r - adjustedDy * adjustedDy));
       matrix.drawLine(cx - dx, cy + dy, cx + dx, cy + dy);
     }
   };
