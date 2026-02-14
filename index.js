@@ -74,7 +74,7 @@ const renderTrain = (train, x, y) => {
         matrix
             .fgColor(getColor(train))
             .bgColor(getColor(train))
-            .drawCircle(x + 6, y + 6, 7)
+            .drawCircle(x + 6, y + 6, 5)
 
             .fgColor(0xFFFFFF)
             .bgColor(0x000000)
