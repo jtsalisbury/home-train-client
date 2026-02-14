@@ -43,11 +43,28 @@ const renderTrainData = (data) => {
         showNoTrains();
 
     } else {
-        if (data.trains.length > 3) {
-            renderArrivalTimes(data.trains.slice(0, 3));
-        } else {
-            renderArrivalTimes(data.trains);
+        const jTimes = data.trains.filter(train => train.train_type == "J" || train.train_type == "Z").map(train => train.which_is_in);
+        const mTimes = data.trains.filter(train => train.train_type == "M").map(train => train.which_is_in);
+
+        matrix.clear().brightness(35).font(font);
+        
+        if (jTimes && jTimes.length > 0) {
+            renderTrain({
+                train_type: "J",
+                which_is_in: jTimes
+            }, 2, 1);
         }
+
+        if (mTimes && mTimes.length > 0) {
+            renderTrain({
+                train_type: "M",
+                which_is_in: mTimes
+
+            }, 2, 17);
+        }
+        
+
+        matrix.sync();
     }
 }
 
@@ -95,25 +112,29 @@ const fillCircle = (cx, cy, r) => {
       .bgColor(0x000000)
       .drawText(train.train_type, cx - 2, cy - 3);
       
+    let str = "";
+    for (let i = 0; i < 4 && i < train.which_is_in.length; i++) {
+        let time = train.which_is_in[i]
 
+        str += time + ", ";
+    }
+    
     // Arrival time
     matrix
         .fgColor(0xCC8C00) // amber
-        .drawText(train.which_is_in + "", x + 18, y + 4);  
+        .drawText(str, x + 18, y + 4);  
   };
 
 const renderArrivalTimes = (trains) => {
-    matrix.clear().brightness(35).font(font);
 
     if (trains[0]) {
-        renderTrain(trains[0], 2, 1);
+        
     }
 
     if (trains[1]) {
-        renderTrain(trains[1], 2, 17)
+        
     }
    
-    matrix.sync();
        
 }
 
