@@ -97,7 +97,7 @@ const fillCircle = (cx, cy, r) => {
   };
 
 const renderArrivalTimes = (trains) => {
-    matrix.clear().brightness(180).font(font);
+    matrix.clear().brightness(35).font(font);
 
     if (trains[0]) {
         renderTrain(trains[0], 2, 1);
