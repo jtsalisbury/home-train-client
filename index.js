@@ -99,7 +99,7 @@ const fillCircle = (cx, cy, r) => {
     // Arrival time
     matrix
         .fgColor(0xCC8C00) // amber
-        .drawText(train.which_is_in, x + 18, y + 4);  
+        .drawText(new String(train.which_is_in), x + 18, y + 4);  
   };
 
 const renderArrivalTimes = (trains) => {
