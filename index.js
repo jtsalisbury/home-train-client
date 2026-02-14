@@ -113,10 +113,10 @@ const fillCircle = (cx, cy, r) => {
       .drawText(train.train_type, cx - 2, cy - 3);
       
     let str = "";
-    for (let i = 0; i < 3 && i < train.which_is_in.length; i++) {
+    for (let i = 0; i < 2 && i < train.which_is_in.length; i++) {
         let time = train.which_is_in[i]
 
-        str += time + ",";
+        str += time + ", ";
     }
     
     // Arrival time
